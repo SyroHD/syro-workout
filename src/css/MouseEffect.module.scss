@@ -1,0 +1,66 @@
+@import "./variables";
+
+.hover-container {
+  display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  overflow: hidden;
+  animation: animateColor 5s infinite;
+}
+
+.mouse-hover {
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+}
+
+.mouse-hover::before {
+  content: "";
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  border-radius: 50%;
+  box-shadow: 0 0 10px $accent-color, 0 0 20px $accent-color,
+    0 0 40px $accent-color, 0 0 60px $accent-color, 0 0 80px $accent-color,
+    0 0 100px $accent-color;
+  background-color: $accent-color;
+  transform: scale(0);
+  transition: 1s;
+}
+
+.mouse-hover::after {
+  content: "";
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  border-radius: 50%;
+  background-color: $accent-color;
+  transform: scale(0);
+  transition: 1s;
+}
+
+.mouse-hover:hover::before {
+  transform: scale(1);
+  transition: 0s;
+}
+
+.mouse-hover:hover::after {
+  transform: scale(1);
+  transition: 0s;
+}
+
+@keyframes animateColor {
+  0% {
+    filter: hue-rotate(0deg);
+  }
+  100% {
+    filter: hue-rotate(360deg);
+  }
+}

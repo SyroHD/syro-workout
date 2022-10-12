@@ -1,0 +1,246 @@
+@import "./variables";
+
+.section-container {
+  display: flex;
+  width: 90%;
+  height: 100vh;
+  margin: auto;
+  padding-top: 160px;
+  overflow: hidden;
+}
+
+//Section One
+.section-one {
+  z-index: 1;
+  width: 30%;
+}
+
+.challenges-header {
+  color: white;
+  font-size: 12rem;
+  font-family: "Bebas Neue", cursive;
+}
+
+.challenges-information {
+  color: white;
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  opacity: 0.9;
+  font-size: 2rem;
+  width: 100%;
+}
+
+.equipment-container {
+  padding-top: 100px;
+  width: 100%;
+}
+
+.dumbbell-one {
+  margin-left: 10%;
+  width: 20%;
+  animation: animateDumbbellOne 5s ease infinite;
+  filter: drop-shadow(-20px 40px 10px rgba(0, 0, 0, 0.1));
+}
+
+.dumbbell-two {
+  width: 20%;
+  margin-left: 10%;
+  margin-right: 10%;
+  filter: drop-shadow(-20px 40px 10px rgba(0, 0, 0, 0.1));
+  animation: animateDumbbellTwo 8s ease infinite;
+}
+
+.foam-roll {
+  width: 20%;
+  margin-left: 10%;
+  filter: drop-shadow(-20px 40px 10px rgba(0, 0, 0, 0.1));
+  animation: animateRoll 7s ease infinite;
+}
+
+.wall {
+  width: 100%;
+  margin-top: 30px;
+  filter: drop-shadow(0 80px 20px rgba(0, 0, 0, 0.3));
+}
+
+@keyframes animateDumbbellOne {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(20px);
+  }
+}
+
+@keyframes animateDumbbellTwo {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(40px);
+  }
+}
+
+@keyframes animateRoll {
+  0%,
+  100% {
+    transform: translateY(20px);
+  }
+  50% {
+    transform: translateY(0px) rotate(10deg);
+  }
+}
+
+//Section Two
+.section-two {
+  z-index: 1;
+  width: auto;
+  margin-left: 150px;
+}
+
+.btn-container {
+  margin-bottom: 40px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.btn {
+  margin: 0 30px;
+  background-color: transparent;
+  border: 0;
+  color: white;
+  opacity: 0.7;
+  font-size: 2.5rem;
+  padding: 20px 80px;
+  box-shadow: 2px 2px 6px rgba($color: #000000, $alpha: 0.8),
+    -1px -1px 6px rgba($color: white, $alpha: 0.1);
+}
+
+.btn-clicked {
+  margin: 0 30px;
+  background-color: transparent;
+  border: 0;
+  color: #90d4ff;
+  text-shadow: 0 0 10px rgba($color: #90d4ff, $alpha: 0.9),
+    0 0 20px rgba($color: #90d4ff, $alpha: 0.6),
+    0 0 30px rgba($color: #90d4ff, $alpha: 0.4),
+    0 0 40px rgba($color: #90d4ff, $alpha: 0.3);
+  opacity: 0.7;
+  font-size: 2.5rem;
+  font-weight: 400;
+  padding: 20px 80px;
+  box-shadow: inset 2px 2px 6px rgba($color: #000000, $alpha: 0.8),
+    inset -1px -1px 6px rgba($color: white, $alpha: 0.1);
+}
+
+.btn:hover {
+  box-shadow: 2px 2px 6px rgba($color: #000000, $alpha: 0.8),
+    -1px -1px 6px rgba($color: white, $alpha: 0.1),
+    inset 2px 2px 6px rgba($color: #000000, $alpha: 0.8),
+    inset -1px -1px 6px rgba($color: white, $alpha: 0.1);
+}
+.workouts {
+  margin: 60px 0 0 0x;
+}
+
+@media screen and (max-width: 1430px) and (orientation: portrait) {
+  .btn-container {
+    margin-top: 40px;
+  }
+}
+
+@media screen and (max-width: 1400px) and (orientation: landscape) {
+  .section-container {
+    padding-top: 0;
+  }
+}
+//Diese Query zerstört alles
+@media screen and (max-width: 1430px) {
+  .section-container {
+    padding-top: 120px;
+    flex-direction: column;
+    margin: auto;
+    z-index: 1;
+  }
+
+  .section-one,
+  .section-two {
+    width: 100%;
+    margin-left: 0;
+    text-align: center;
+  }
+
+  .equipment-container {
+    display: none;
+  }
+
+  .wall {
+    display: none;
+  }
+
+  .btn-container {
+    margin-bottom: 15px;
+  }
+
+  .challenges-header {
+    font-size: 10rem;
+    margin-bottom: 0;
+  }
+}
+
+@media screen and (max-width: 840px) {
+  .btn {
+    font-size: 2rem;
+  }
+
+  .btn-clicked {
+    font-size: 2rem;
+  }
+}
+
+@media screen and (max-width: 770px) {
+  .btn {
+    font-size: 1.8rem;
+    padding: 20px 60px;
+  }
+
+  .btn-clicked {
+    font-size: 1.8rem;
+    padding: 20px 60px;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .challenges-information {
+    font-size: 1.5rem;
+  }
+
+  .challenges-header {
+    font-size: 8rem;
+  }
+  .btn {
+    margin: 0 10px;
+  }
+
+  .btn-clicked {
+    margin: 0 10px;
+  }
+}
+
+@media screen and (max-width: 580px) {
+  .challenges-header {
+    font-size: 6rem;
+  }
+  .btn {
+    font-size: 1.5rem;
+    padding: 10px 20px;
+  }
+
+  .btn-clicked {
+    font-size: 1.5rem;
+    padding: 10px 20px;
+  }
+}
